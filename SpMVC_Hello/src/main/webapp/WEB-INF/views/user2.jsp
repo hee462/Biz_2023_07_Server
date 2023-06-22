@@ -9,7 +9,8 @@
 <style>
 table {
 	border-collapse: collapse;
-	width: 80% margin:20px auto;
+	width: 80%;
+	margin:20px auto;
 }
 
 td, th {
@@ -17,7 +18,7 @@ td, th {
 	padding: 12px 16px;
 }
 
-tr:nth-child(evne) {
+tr:nth-child(even) {
 	background-color: #bbb;
 }
 
@@ -33,8 +34,8 @@ tr:hover {
 header {
 	background: green;
 	padding: 2rem;
-	text-aline: center;
-	tect_shodow: 1px 1px 1px black;
+	text-align: center;
+	text-shadow: 1px 1px 1px black;
 	color : yellow;
 }
 </style>

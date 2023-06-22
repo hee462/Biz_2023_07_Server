@@ -65,7 +65,7 @@ public class HomeController {
 		addrList.add(addressDto);
 		
 		for(AddressDto dto : addrList) {
-			System.out.println(addrList.toString());
+			System.out.println(dto.toString());
 		}
 		
 		model.addAttribute("ADDRS" , addrList);
