@@ -13,13 +13,8 @@ public class UserServiceImplV1 implements UserService{
 	 * List<UserDto> userList 객체를 생성하고
 	 * 임의로 생성한 3명의 User 정보를 add하기
 	 * userList 리스트를 return 하기 
-	 * 
-	 * 
 	 */
 	@Override
-	/*
-	 * 
-	 */
 	public List<UserDto> selectAll() {
 		List<UserDto> userList = new ArrayList<UserDto>();
 		UserDto dto = new UserDto();
