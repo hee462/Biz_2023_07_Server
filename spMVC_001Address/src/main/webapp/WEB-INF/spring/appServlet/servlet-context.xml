@@ -9,20 +9,17 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 	<annotation-driven />
-	<!-- 
-	spring MVC 프로젝트에서 JSP가 참조할 css파일, js파일, 이미지 등을 저장할 폴더
-	 -->
+	<!-- spring MVC 프로젝트에서 JSP가 참조할 css파일, js파일, 이미지 등을 저장할 폴더 -->
 	<resources mapping="/static/**" location="/static/" />
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	<!-- 
-	component-scan: base-package로 지정된 폴더 아래에
-	저장된 클래스
-	 -->
+	<!-- component-scan: base-package로 지정된 폴더 아래에 저장된 클래스 -->
 	<context:component-scan
-		base-package="com.hee462.address" />
+		base-package="com.hee462.address.cotroller" />
+	<context:component-scan
+		base-package="com.hee462.address.service.impl" />
 
 </beans:beans>
