@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+div.input_box {
+  /* border: 1px solid black; */
+  width: 1500px;
+  height: 100px;
+  display: flex;
+  margin-top: 10px;
+}
+input.input {
+  flex: 1;
+  height: 30px;
+  text-align: left;
+  border-radius: 10px;
+  margin: 5px 10px;
+  border: 1px solid #ddd;
+}
+input.input3 {
+  flex: 3;
+  height: 30px;
+  text-align: left;
+  border-radius: 10px;
+  margin: 5px 10px;
+  border: 1px solid #ddd;
+}
+
+table {
+  width: 80%;
+  height: 10px;
+  text-align: center;
+}
+table {
+  padding: 10px 5px;
+  margin: 5px 5px;
+  border-bottom: 2px solid #bbb;
+  border-top: 2px solid #bbb;
+}
+table.td {
+  border: 1px solid#ddd;
+}

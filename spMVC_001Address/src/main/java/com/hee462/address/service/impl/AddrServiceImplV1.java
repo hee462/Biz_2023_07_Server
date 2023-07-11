@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.hee462.address.dao.AddrDao;
 import com.hee462.address.dao.BuyerDao;
+import com.hee462.address.dao.HobbyDao;
 import com.hee462.address.dao.ScoreDao;
 import com.hee462.address.models.AddrDto;
+import com.hee462.address.models.HobbyByAidVO;
 import com.hee462.address.service.AddrService;
 @Service
 public class AddrServiceImplV1 implements AddrService {
@@ -53,9 +55,8 @@ public class AddrServiceImplV1 implements AddrService {
 	 * 실수로 생서자 메서드를 만들지 않았을 경우 NullPoint exception이 발생한다
 	 */
 	protected  final AddrDao addrDao;
-	public AddrServiceImplV1(AddrDao addrDao) {
-		this.addrDao=addrDao;
-	}
+	protected final HobbyDao hobbyDao;
+	
 	
 	// setter 의존성 주입(Setter DI)
 	/*
@@ -66,6 +67,12 @@ public class AddrServiceImplV1 implements AddrService {
 	 */
 	@Autowired
 	protected ScoreDao scoreDao;
+	public AddrServiceImplV1(AddrDao addrDao, HobbyDao hobbyDao) {
+		super();
+		this.addrDao = addrDao;
+		this.hobbyDao = hobbyDao;
+	}
+
 	public void setScoreDao(ScoreDao scoreDao) {
 		this.scoreDao = scoreDao;
 	}
@@ -79,8 +86,14 @@ public class AddrServiceImplV1 implements AddrService {
 
 	@Override
 	public AddrDto findById(String id) {
-		// TODO Auto-generated method stub
-		return addrDao.findById(id);
+		// id에 해당하는 주소조회
+		AddrDto addrDto = addrDao.findById(id);
+		// id에 해당하는 취미 리스트 조회
+		List<HobbyByAidVO> hobbyList = hobbyDao.findHobbyByAID(id);
+		//주소 객체에 취미 리스트 포함
+		addrDto.setHobbyList(hobbyList);
+		// 주소 객체 return
+		return addrDto;
 	}
 
 	@Override
