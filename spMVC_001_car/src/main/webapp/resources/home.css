@@ -1,0 +1,29 @@
+@charset "EUC-KR";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+div.input_box input {
+  border: 1px solid black;
+  margin: 15px auto;
+  padding: 20xp 20px;
+}
+div.button_box button {
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 15px;
+  background-color: rgb(118, 118, 204);
+  color: black;
+}

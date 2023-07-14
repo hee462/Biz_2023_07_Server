@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hee462.car.Dao.carDao">
+
+	<select id="findById"></select>
+	<insert id="insert">
+		insert into tbl_car(
+		c_div,c_startKm,c_place,c_cost
+		) values(
+		#{c_div},#{c_startKm},#{c_place},#{c_cost}
+		)
+	</insert>
+	<update id="update">
+	UPDATE tbl_car
+	 SET
+	c_div =#{c_div},
+	c_starKm =#{c_starKm},
+	c_place =#{c_place}
+	c_cost =#{c_cost}
+	WHERE c_seq=#{c_seq}
+	
+	</update>
+	<delete id="delete">
+	DELETE FROM tbl_car 
+	WHERE c_seq =#{c_seq}
+	</delete>
+
+</mapper> 
