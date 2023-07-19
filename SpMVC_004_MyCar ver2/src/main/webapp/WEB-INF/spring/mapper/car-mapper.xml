@@ -2,20 +2,26 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
- <mapper namespace="com.callor.car.persistance.CarDao">
- 
- 	<select id="findTachoByCarNum">
-	 	SELECT * FROM tbl_carmanager
-			WHERE c_carnum  = #{carnum}
-			ORDER BY c_sdate DESC, c_stime DESC
+
+<mapper namespace="com.callor.car.persistance.CarDao">
+
+	<select id="findTachoByCarNum">
+		SELECT * FROM tbl_carmanager
+		WHERE c_carnum = #{carnum}
+		ORDER BY c_sdate DESC, c_stime DESC
 		LIMIT 1
- 	</select>
- 
- 	<select id="selectAll"></select>
- 	<select id="findById"></select>
- 	<insert id="insert"></insert>
- 	<update id="update"></update>
- 	<delete id="delete"></delete>
- 
- </mapper>
+	</select>
+
+
+	<select id="findById"></select>
+	<insert id="insert">
+		insert into tbl_carmanager(
+		c_carnum ,c_qty,c_username,c_sdate,c_stime,c_skm
+		)values(
+		#{c_carnum} ,#{c_qty},#{c_username},#{c_sdate},#{c_stime},#{c_skm})
+
+	</insert>
+	<update id="update"></update>
+	<delete id="delete"></delete>
+
+</mapper>

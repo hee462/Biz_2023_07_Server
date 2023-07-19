@@ -2,8 +2,10 @@ package com.callor.car.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,9 +28,13 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(
 			@ModelAttribute("CAR")
-			CarDto carDto) {
+			CarDto carDto,
+			Model model
+			) {
 		log.debug("나는 홈 콘트롤러 입니다");
-		return "home";
+		List<CarDto> carList = carService.selectAll();
+		model.addAttribute("CAR_LIST",carList);
+		return "car/input";
 	}
 	
 	
@@ -36,8 +42,11 @@ public class HomeController {
 	public String input(
 			@ModelAttribute("CAR")
 			CarDto carDto) {
+		int result = carService.insert(carDto);
 		return "redirect:/";
 	}
+	
+	
 	
 	/*
 	 * 문자열을 return 하여 views 폴더의 JSP 와 Rendering 하는 절차를

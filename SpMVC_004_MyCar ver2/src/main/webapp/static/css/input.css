@@ -3,17 +3,17 @@
 form.main {
   width: 70%;
   margin: 10px auto;
-  display: flex;
+
   /* 
   flex-wrap : wrap 
   화면에서 item 이 벗어났을때 자동 줄바꿈 
   */
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 form.main div {
-  flex: 1;
-  margin: 5px;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 form.main input {
