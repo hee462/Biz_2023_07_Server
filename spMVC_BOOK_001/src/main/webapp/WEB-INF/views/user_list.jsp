@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<table class="main list">
+	<tr>
+		<th>회원코드</th>
+		<th>회원명</th>
+		<th>전화번호</th>
+		<th>주소</th>
+		
+		<th>
+	</tr>
+	<c:forEach items="${USER_LIST}" var="USER">
+		<tr>
+			<td>${USER.u_code}</td>
+			<td>${USER.u_name}</td>
+			<td>${USER.u_tel}</td>
+			<td>${USER.u_addr}</td>
+		
+
+		</tr>
+	</c:forEach>
+
+		<%
+		// 주소추가를 클릭하면'
+		// 서버에 /insert URL로 GET request로 보낸다
+		//	  GET /insert HTTP1.0
+		%>
+		<a href="${rootPath}/book_add">회원 등록</a>
+
+	</table>

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100vw;
+  height: 100vh;
+}
+header.main {
+  width: 100%;
+  font-size: 70px;
+  font-weight: 900;
+  text-align: center;
+}
+nav.main {
+  background-color: rgb(10, 78, 56);
+  text-align: center;
+  font-size: 20px;
+}
+
+nav.main ul {
+  list-style: none;
+  display: flex;
+  justify-self: center;
+}
+
+nav.main li {
+  white-space: nowrap;
+  margin: 0.5rem;
+  padding: 3px 0.5rem;
+  color: white;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.3s ease-in-out;
+}
