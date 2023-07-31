@@ -60,11 +60,11 @@ show tables;
 
 drop table tbl_users;
 
-insert into tbl_user(username, password, u_name,u_nickname,u_tel,u_roll)
+insert into tbl_users(username, password, u_name,u_nickname,u_tel,u_roll)
 values('hee462','12341234','변희선','희선','010-8080-9887','ADMIN');
 
 
-
+select * from tbl_users;
 
 
 

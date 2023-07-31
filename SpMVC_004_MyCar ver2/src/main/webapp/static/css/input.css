@@ -79,3 +79,11 @@ form.user div.error {
   background-color: red;
   color: white;
 }
+button {
+  width: 20px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: cadetblue;
+  text-align: center;
+  margin: 10px auto;
+}

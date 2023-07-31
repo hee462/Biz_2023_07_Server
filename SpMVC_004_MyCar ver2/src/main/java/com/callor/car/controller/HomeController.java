@@ -89,15 +89,6 @@ public class HomeController {
 		return carDto;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }
